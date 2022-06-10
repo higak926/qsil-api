@@ -4,7 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 origins = [
-    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://qsil-uiux.vercel.app"
 ]
 
 app.add_middleware(
@@ -15,6 +16,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.get("/")
 def Hello():
-    return {"Hello":"World!"}
+    return {"Hello": "World!"}
